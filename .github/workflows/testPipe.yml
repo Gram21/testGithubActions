@@ -14,4 +14,4 @@ jobs:
       run: echo "hi" >> test.txt
     - name: Pipe
       shell: bash
-      run: grep ttt test.txt >> out.txt | echo "Done"
+      run: grep ttt test.txt >> out.txt || echo "Done"
