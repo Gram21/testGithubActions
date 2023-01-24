@@ -1,0 +1,17 @@
+name: Test Pipe
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+     permissions:
+      contents: write
+    steps:
+    - name: Create file
+      shell: bash
+      run: echo "hi" >> test.txt
+    - name: Pipe
+      shell: bash
+      run: grep ttt test.txt >> out.txt | echo "Done"
